@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <title>UWISpots - Login</title>
+    <style>
+
+        *{
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+
+        .page{
+            height: 100%;
+            background-image: url('icon/UWI Admin Building (Restored) 003.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(4px);
+
+        }
+
+        .loginside {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            /* z-index: 10; */
+               
+        }
+
+        .login-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .login-container h2 {
+            margin-bottom: 20px;
+        }
+
+        .inputitem{
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 5px;
+        }
+
+        .login-container input {
+           
+            padding: 10px;
+          
+            border: none;
+            border-radius: 5px;
+        }
+        .login-container input:focus {
+            outline: none;
+        }
+
+        .login-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #goog{
+            margin-bottom: 5px;
+            border-radius: 16px;
+            color: black;
+            background-color: #fff;
+            border: 1px solid black;
+        }
+
+        #goog:hover{
+            background-color: #007BFF;
+            color: white;
+        }
+
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        
+        #Reset{
+            font-size: 0.9em;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="page">
+
+        
+
+    
+    </div>
+
+    <div class="loginside">
+
+        <div class="login-container">
+            <h2>Login to UWISpots<i class="bi bi-crosshair"></i></h2>
+            <div class="inputitem">
+                <i class="bi bi-person-fill"></i><span><input id="loginEmail" type="text" placeholder="Username" required></span>
+            </div>
+            <div class="inputitem">
+                <i class="bi bi-lock-fill"></i><span><input id="loginPassword" type="password" placeholder="Password" required></span>
+            </div>
+            <p id="Reset"><a href="#">Forgot Password?</a></p>
+            <button  id="goog" onclick="googleLogin()">
+                <i class="bi bi-google"></i> Sign in with Google
+            </button>
+            <button  onclick="emailLogin()">Sign In</button>
+            <p id="loginError" style="color:red;"></p>
+            <p>Don't have an account? <a href="register.html">Register here</a></p>
+        </div>
+    </div>
+    
+     <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+    <script src="inapp.js"></script>
+    <script src="login.js"></script>
+    
+</body>
+</html>
